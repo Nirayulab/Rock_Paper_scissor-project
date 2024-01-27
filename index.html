@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cryptography</title>
+    <base href="/">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(25, 25, 25);
+            color: white;
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 50;
+            background-color: rgb(166, 123, 247);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 19px;
+        }
+
+        .image {
+            display: flex;
+            margin-right: 60%;
+        }
+
+        .title {
+            font-size: 50px;
+            font-weight: bold;
+            padding-bottom: 30px;
+        }
+
+        .move-icon {
+            height: 80px;
+
+        }
+
+        .move-button {
+            background-color: transparent;
+            border-width: 3px;
+            border-color: aliceblue;
+            width: 140px;
+            height: 140px;
+            border-radius: 70px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .result {
+            font-size: 50px;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+
+        .score {
+            margin-top: 60px;
+            font-size: 50px;
+        }
+
+        .reset-score {
+            background-color: white;
+            border: none;
+            padding: 8px 11px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 20px;
+            cursor: pointer;
+            
+        }
+        .reset-score:hover{
+        
+            font-size: 1.1rem;
+        }
+
+        .move {
+            margin-top: 20px;
+            font-size: 40px;
+        }
+
+        .wholebody {
+            padding-left: 20%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="image"><a href="/"> <img src="photo/anime.png" width="60" height="60"></a></div>
+
+
+            <div class="upbar">
+                <ul>
+
+                    <li><b><a href="/">Home</a></b></li>
+                    <li><b><a href="courses">Courses</a></b></li>
+                    <li><b><a href="mycv">MyCv</a></b></li>
+                    <li><b><a href="contactme">Contactme</a></b></li>
+
+
+
+            </div>
+
+        </nav>
+    </header>
+    <main class="wholebody">
+        <h1 class="title">Rock Paper Scissors</h1>
+        <button onclick="
+       playGame('rock');
+       " class="move-button"><img src="rock-emoji.png" class="move-icon"></button>
+
+        <button onclick="
+        playGame('paper');
+        
+             " class="move-button"><img src="paper-emoji.png" class="move-icon"></button>
+
+        <button onclick="
+         playGame('scissors');
+        " class="move-button"><img src="scissors-emoji.png"
+                class="move-icon"></button><!--playgames function ma parameter pass gareako player lea choose gareako value playermove ma gayra save huncha -->
+
+        <p class="js-result result"></p>
+
+
+        <p class="js-moves move">
+
+        </p>
+        <p class="js-score score"></p>
+
+        <button onclick="
+        score.Wins=0;
+        score.Losses=0;
+        score.Ties=0;
+        localStorage.removeItem('score');
+        updateScoreElement();
+       
+        " class="reset-score">Reset Score</button>
+
+        
+        <script src="cryptography/rockpaperscissor.js"> </script>
+    </main>
+</body>
+
+</html>
